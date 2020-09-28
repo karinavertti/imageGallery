@@ -7,13 +7,17 @@ import './App.css';
 
 
 // Pseudo code:
-// User selects calming image from dropdown
+// User image class from dropdown
 // Capture user input onChange
 // Make API call with user input in query param
 // Get results back
-// map over results and display
-// add what goes in components (suggest the dropdown)
-// what goes in state (suggest userInput and images)
+// Map over results and display
+// Add a component to display the images
+// User input and images go into state
+
+// Stretch goals:
+// Make an album from user's favourite photos using Firebase
+
 
 // Display artwork on the page
 class App extends Component {
@@ -38,14 +42,14 @@ class App extends Component {
         params: {
           client_id: apiKey,
           query: queryTerm,
-          per_page: 10,
+          per_page: 12,
           orientation: 'squarish',
           format: 'json'
         }
       }).then((res) => {
         // Code to run after data comes back from API
         const smileImages = res.data.results;
-
+        console.log(res.data.results);
         this.setState({
           images: smileImages,
         })
@@ -57,8 +61,7 @@ class App extends Component {
 
 
   handleChange = (event) => {
-    console.log(event.target.value);  // user input data
-
+    // user input data
     this.setState({
       dropdownItem: event.target.value
     });
@@ -76,6 +79,7 @@ class App extends Component {
         <form action="">
           <label forhtml="smile">Select what makes you smile:</label>
           <select name="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
+            <option value="">...</option>
             <option value="puppies">Puppies</option>
             <option value="kittens">Kittens</option>
             <option value="flowers">Flowers</option>
@@ -84,19 +88,20 @@ class App extends Component {
         </select>
         </form>
 
+        <div className="results">
         {this.state.images.map((displayImage) => {
         return (
-          <div class="results">
             <DisplayImage 
             id={displayImage.id}
             url={displayImage.urls.regular}
             alt_description={displayImage.alt_description}
             user={displayImage.user.name}
+            portfolio={displayImage.user.portfolio_url}
+            siteUrl={'https://unsplash.com/'}
             />
+            );
+          })}
           </div>
-
-        );
-      })}
 
       </div>
     );

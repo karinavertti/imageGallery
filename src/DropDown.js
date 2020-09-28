@@ -3,13 +3,14 @@ import React from 'react';
 const DropDown = (props) => {
     return (
         <form action="">
-            <label forhtml="animal">Choose your animal:</label>
-            <select name="animal" id="animal" onChange={this.handleChange} value={this.state.dropdownItem}>
-                <option value="monkey">Monkeys</option>
-                <option value="eagle">Eagles</option>
-                <option value="dragon">Dragons</option>
-                <option value="elephant">Elephants</option>
-                <option value="centaur">Centaurs</option>
+            <label forhtml="smile">Select what makes you smile:</label>
+            <select name="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
+                <option value="">...</option>
+                <option value="puppies">Puppies</option>
+                <option value="kittens">Kittens</option>
+                <option value="flowers">Flowers</option>
+                <option value="sunset">Sunset</option>
+                <option value="ocean">Ocean</option>
             </select>
         </form>
     );
