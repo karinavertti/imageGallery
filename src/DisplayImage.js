@@ -4,7 +4,7 @@ const DisplayImage = (props) => {
 
     return (
 
-                <div key={props.id} className="flexDiv">
+                <div className="flexDiv">
                     <img src={props.url} alt={props.alt_description}/>
                     {/* <p>Photo by: {props.user}</p> */}
                     <p>Photo by <a href={props.portfolio}>{props.user}</a> on <a href={props.siteUrl}>Unsplash</a></p>

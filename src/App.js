@@ -27,50 +27,62 @@ class App extends Component {
     this.state = {
       images: [],
       dropdownItem: '',
+      randomNumber: 1
     }
   }
 
-  componentDidUpdate() {
-    // Make an API call
-    const apiKey = "w_BCXG1arn8Umvl_4Qgbdp9T16jilc-Q7NGOHnSUp70";
-    const getImages = (queryTerm) => {
-      axios({
-        method: 'GET',
-        url: 'https://api.unsplash.com/search/photos',
-        dataResponse: 'json',
-        // stuff that goes after the question mark (query parameters)
-        params: {
-          client_id: apiKey,
-          query: queryTerm,
-          per_page: 12,
-          orientation: 'squarish',
-          format: 'json'
-        }
-      }).then((res) => {
-        // Code to run after data comes back from API
-        const smileImages = res.data.results;
-        console.log(res.data.results);
-        this.setState({
-          images: smileImages,
-        })
-      })
-
-    } 
-    getImages(this.state.dropdownItem);
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.dropdownItem !== prevState.dropdownItem) {
+      this.getImages(this.state.dropdownItem, this.state.randomNumber);
+    }
   }
 
+  getImages = (queryTerm, randomPage) => {
+    const apiKey = "w_BCXG1arn8Umvl_4Qgbdp9T16jilc-Q7NGOHnSUp70";
+    axios({
+      method: 'GET',
+      url: 'https://api.unsplash.com/search/photos',
+      dataResponse: 'json',
+      // stuff that goes after the question mark (query parameters)
+      params: {
+        client_id: apiKey,
+        query: queryTerm,
+        page: randomPage,
+        per_page: 12,
+        orientation: 'squarish',
+        format: 'json'
+      }
+    }).then((res) => {
+      console.log(res);
+      // Code to run after data comes back from API
+      const smileImages = res.data.results;
+      console.log(res.data.results);
+      this.setState({
+        images: smileImages,
+      })
+    })
+
+  } 
+
+  randomPage = () => {
+    return Math.floor(Math.random() * 5) + 1 
+  }
+  
 
   handleChange = (event) => {
     // user input data
+    const randomNumber = this.randomPage();
     this.setState({
-      dropdownItem: event.target.value
+      dropdownItem: event.target.value,
+      randomNumber: randomNumber
     });
     
     }
 
   render() {
+    console.log(this.randomPage());
   return (
-      <div className="App" className="wrapper">
+      <div className="App wrapper">
         
         <h1>Take a break and smile!</h1>
         
@@ -92,7 +104,7 @@ class App extends Component {
         {this.state.images.map((displayImage) => {
         return (
             <DisplayImage 
-            id={displayImage.id}
+            key={displayImage.id}
             url={displayImage.urls.regular}
             alt_description={displayImage.alt_description}
             user={displayImage.user.name}
