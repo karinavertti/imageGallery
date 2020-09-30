@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/karina-vertti-project-five/static/css/main.bc34c030.chunk.css",
+    "main.js": "/karina-vertti-project-five/static/js/main.a806f4cd.chunk.js",
+    "main.js.map": "/karina-vertti-project-five/static/js/main.a806f4cd.chunk.js.map",
+    "runtime-main.js": "/karina-vertti-project-five/static/js/runtime-main.8f314233.js",
+    "runtime-main.js.map": "/karina-vertti-project-five/static/js/runtime-main.8f314233.js.map",
+    "static/js/2.1a6f1a69.chunk.js": "/karina-vertti-project-five/static/js/2.1a6f1a69.chunk.js",
+    "static/js/2.1a6f1a69.chunk.js.map": "/karina-vertti-project-five/static/js/2.1a6f1a69.chunk.js.map",
+    "index.html": "/karina-vertti-project-five/index.html",
+    "precache-manifest.0ef328bacfbc1a93275d1418fb221900.js": "/karina-vertti-project-five/precache-manifest.0ef328bacfbc1a93275d1418fb221900.js",
+    "service-worker.js": "/karina-vertti-project-five/service-worker.js",
+    "static/css/main.bc34c030.chunk.css.map": "/karina-vertti-project-five/static/css/main.bc34c030.chunk.css.map",
+    "static/js/2.1a6f1a69.chunk.js.LICENSE.txt": "/karina-vertti-project-five/static/js/2.1a6f1a69.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f314233.js",
+    "static/js/2.1a6f1a69.chunk.js",
+    "static/css/main.bc34c030.chunk.css",
+    "static/js/main.a806f4cd.chunk.js"
+  ]
+}
