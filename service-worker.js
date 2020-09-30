@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/karina-vertti-project-five/precache-manifest.0ef328bacfbc1a93275d1418fb221900.js"
+  "/karina-vertti-project-five/precache-manifest.2a31c2109525aee5d92a07a0af5374db.js"
 );
 
 self.addEventListener('message', (event) => {
