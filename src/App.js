@@ -82,38 +82,45 @@ class App extends Component {
   render() {
     console.log(this.randomPage());
   return (
-      <div className="App wrapper">
+      <div className="App">
         
-        <h1>Take a break and smile!</h1>
-        
-        {/* <DropDown/> */}
+        <div class="wrapper">
+          <h1>Take a break and smile!</h1>
+          
+          {/* <DropDown/> */}
+  
+          <form>
+            <label forhtml="smile">Select what makes you smile:</label>
+            <select name="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
+              <option className="select" value="">Please select an option</option>
+              <option value="puppies">Puppies</option>
+              <option value="kittens">Kittens</option>
+              <option value="flowers">Flowers</option>
+              <option value="sunset">Sunset</option>
+              <option value="ocean">Ocean</option>
+          </select>
+          </form>
+  
+          <div className="results">
+          {this.state.images.map((displayImage) => {
+          return (
+              <DisplayImage 
+              key={displayImage.id}
+              url={displayImage.urls.regular}
+              alt_description={displayImage.alt_description}
+              user={displayImage.user.name}
+              portfolio={displayImage.user.portfolio_url}
+              siteUrl={'https://unsplash.com/'}
+              />
+              );
+            })}
+            </div>
+        </div>
 
-        <form action="">
-          <label forhtml="smile">Select what makes you smile:</label>
-          <select name="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
-            <option value="">...</option>
-            <option value="puppies">Puppies</option>
-            <option value="kittens">Kittens</option>
-            <option value="flowers">Flowers</option>
-            <option value="sunset">Sunset</option>
-            <option value="ocean">Ocean</option>
-        </select>
-        </form>
-
-        <div className="results">
-        {this.state.images.map((displayImage) => {
-        return (
-            <DisplayImage 
-            key={displayImage.id}
-            url={displayImage.urls.regular}
-            alt_description={displayImage.alt_description}
-            user={displayImage.user.name}
-            portfolio={displayImage.user.portfolio_url}
-            siteUrl={'https://unsplash.com/'}
-            />
-            );
-          })}
-          </div>
+        <footer>
+        <p>Copyright © 2020 Karina Vertti | <a href="https://junocollege.com/" target="blank">Created at Juno
+                College</a></p>
+        </footer>
 
       </div>
     );
