@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "12daa8723b3d793da30c5611a7d84287",
+    "revision": "6906b73c003adb3343feeb1c56bf6804",
     "url": "/karina-vertti-project-five/index.html"
   },
   {
-    "revision": "c5c21fef15b5cc7b4456",
-    "url": "/karina-vertti-project-five/static/css/main.77b5400c.chunk.css"
+    "revision": "b9db78c7e010aabe5849",
+    "url": "/karina-vertti-project-five/static/css/main.9e1adae1.chunk.css"
   },
   {
     "revision": "b640dd707c50e16c31e6",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/karina-vertti-project-five/static/js/2.584d579f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c5c21fef15b5cc7b4456",
-    "url": "/karina-vertti-project-five/static/js/main.3383c758.chunk.js"
+    "revision": "b9db78c7e010aabe5849",
+    "url": "/karina-vertti-project-five/static/js/main.d49c32d5.chunk.js"
   },
   {
     "revision": "7aed9a939df7b9cdf216",
