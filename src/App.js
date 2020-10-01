@@ -27,6 +27,7 @@ class App extends Component {
       dataResponse: 'json',
       params: {
         client_id: apiKey,
+        query: 'nature',
         orientation: 'portrait',
         format: 'json'
       }
@@ -90,9 +91,9 @@ class App extends Component {
           <h1>Take a break and smile!</h1>
 
           {/* Dropdown menu */}
-          <form>
+          <form className="flexForm">
             <label forhtml="smile">Select what makes you smile:</label>
-            <select name="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
+            <select className="smile" id="smile" onChange={this.handleChange} value={this.state.dropdownItem}>
               <option className="select" value="">Please select an option</option>
               <option value="puppies">Puppies</option>
               <option value="kittens">Kittens</option>
